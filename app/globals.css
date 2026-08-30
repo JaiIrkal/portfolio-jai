@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ece7df;
+  --foreground: #111111;
+  --muted: #5a564f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #111111;
+  color: #f6f3ee;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .spotlight-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    padding: 1.25rem;
+    background: #f6f3ee;
+    transform: rotate(-1deg);
+  }
+
+  .floating-tile {
+    position: absolute;
+    z-index: 20;
+    border-radius: 0;
+    padding: 0.9rem 1rem;
+    transform: rotate(3deg);
+  }
+
+  .floating-tile-top {
+    top: 8%;
+    right: -2%;
+  }
+
+  .floating-tile-bottom {
+    bottom: 6%;
+    left: -2%;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 0.75rem;
+    padding-left: 1rem;
+    animation: marquee 18s linear infinite;
+  }
+
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #111111;
+    background: #f4efe8;
+    color: #111111;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .section-shell {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    border: 2px solid #111111;
+    box-shadow: 6px 6px 0 0 #111111;
+    background: #f6f3ee;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
