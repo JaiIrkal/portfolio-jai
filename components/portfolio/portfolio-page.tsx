@@ -233,7 +233,7 @@ export function PortfolioPage() {
                 className="relative z-10 mx-auto max-w-6xl px-5 pb-20 pt-8 sm:px-6 lg:px-8 lg:pt-12"
             >
                 <motion.section
-                    className="grid items-center gap-14 overflow-visible py-10 sm:py-14 lg:grid-cols-[1fr_1fr] lg:gap-16 lg:py-20"
+                    className="grid grid-cols-1 items-center gap-8 overflow-visible py-8 sm:py-14 lg:grid-cols-[1fr_1fr] lg:gap-16 lg:py-20"
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}
@@ -251,38 +251,60 @@ export function PortfolioPage() {
                             delay: 0.15,
                         }}
                     >
-                        <div className="relative h-[650px] w-full max-w-[500px] left-180">
+                        <div className="relative mx-auto h-[330px] w-full max-w-[280px] md:h-[650px] md:max-w-[500px] md:left-180">
 
                             {/* Background cards stack - lower z-index */}
                             <motion.div
-                                className="absolute md:right-[100px] lg:right-[-62px] z-40 w-48 rotate-[-15deg] border-2 border-black bg-[#f6f3ee] p-4 shadow-[8px_8px_0_0_#111111] sm:w-56"
-                                animate={{ y: [0, -8, 0] }}
-                                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                            >
+    className="
+        absolute
+        left-40
+        bottom-70
+        z-40
+        w-38
+        rotate-[-15deg]
+        border-2
+        border-black
+        bg-[#f6f3ee]
+        p-4
+        shadow-[8px_8px_0_0_#111111]
+        sm:w-46
+
+        md:right-[500px]
+
+        lg:left-[260px]
+        lg:bottom-140
+    "
+    animate={{ y: [0, -8, 0] }}
+    transition={{
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+    }}
+>
                                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#111111]">Experience</p>
                                 <p className="mt-2 text-3xl font-black leading-none tracking-[-0.08em] text-[#111111]">2+</p>
                                 <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-[#2f2a26]">Years</p>
                             </motion.div>
 
-                            <motion.div
-                                className="absolute md:right-[500px] md:z-[40] lg:left-[-870px] lg:bottom-154 z-10 w-44 rotate-[12deg] border-2 border-black bg-[#dcd3c5] p-4 shadow-[8px_8px_0_0_#111111] sm:w-52"
+                            {/* <motion.div
+                                className="absolute md:right-[500px] md:z-[40] lg:left-[-800px] lg:bottom-154 z-10 w-44 rotate-[12deg] border-2 border-black bg-[#dcd3c5] p-4 shadow-[8px_8px_0_0_#111111] sm:w-52"
                                 animate={{ y: [0, 10, 0] }}
                                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
                             >
                                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#111111]">Projects</p>
                                 <p className="mt-2 text-3xl font-black leading-none tracking-[-0.08em] text-[#111111]">04</p>
                                 <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-[#2f2a26]">Delivered</p>
-                            </motion.div>
+                            </motion.div> */}
 
-                            <motion.div
-                                className="absolute md:bottom-8 md:right-[570px] md:z-40 lg:bottom-28 lg:right-170 z-10 w-48 rotate-[-10deg] border-2 border-black bg-[#f6f3ee] p-4 shadow-[8px_8px_0_0_#111111] sm:w-56"
+                            {/* <motion.div
+                                className="absolute md:bottom-8 md:right-[570px] md:z-40 lg:bottom-28 lg:right-270 z-10 w-48 rotate-[-10deg] border-2 border-black bg-[#f6f3ee] p-4 shadow-[8px_8px_0_0_#111111] sm:w-56"
                                 animate={{ y: [0, -6, 0] }}
                                 transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
                             >
                                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#111111]">Launched</p>
                                 <p className="mt-2 text-3xl font-black leading-none tracking-[-0.08em] text-[#111111]">03</p>
                                 <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-[#2f2a26]">Products</p>
-                            </motion.div>
+                            </motion.div> */}
 
                             {/* Decorative shapes - behind portrait */}
                             {/* <div
@@ -310,13 +332,13 @@ export function PortfolioPage() {
                             {/* Main portrait - CLEARLY VISIBLE */}
                             <div
                                 className="
-        absolute z-30 overflow-hidden
+        absolute inset-x-0 top-0 z-30 mx-auto overflow-hidden
         border-2 border-black
         bg-[#111111]
-        shadow-[16px_16px_0_0_#111111]
+        shadow-[8px_8px_0_0_#111111]
+        h-[285px] w-[230px]
 
-        md:right-[566px] md:top-[-65px]
-        md:h-[700px] md:w-[600px]
+        md:right-[566px] md:top-[-65px] md:left-auto md:inset-x-auto md:h-[700px] md:w-[600px] md:shadow-[16px_16px_0_0_#111111]
 
         lg:left-[32px] lg:top-[32px]
         lg:h-[400px] lg:w-[300px]
@@ -348,11 +370,7 @@ export function PortfolioPage() {
 
                             {/* Floating label - top layer */}
                             <motion.div
-                                className="absolute z-40 border-2 border-black bg-[#f6f3ee] px-4 py-3 shadow-[6px_6px_0_0_#111111]"
-                                style={{
-                                    left: "150px",
-                                    bottom: "90px",
-                                }}
+                                className="absolute bottom-2 left-2 z-40 w-[120px] border-2 border-black bg-[#f6f3ee] px-4 py-3 shadow-[6px_6px_0_0_#111111] md:right-[750px] md:bottom-[-10px] md:left-auto lg:left-[100px] lg:bottom-[140px]"
                                 animate={{ y: [0, -5, 0] }}
                                 transition={{
                                     duration: 4,
@@ -367,14 +385,14 @@ export function PortfolioPage() {
                         </div>
                     </motion.div>
 
-                    <div>
-                        <Badge variant="secondary" className="mb-6">
+                    <div className="w-full md:w-auto">
+                        {/* <Badge variant="secondary" className="mb-6">
                             <Sparkles className="mr-2 h-3.5 w-3.5" />
                             Available for new projects
-                        </Badge>
+                        </Badge> */}
 
                         <motion.h1
-                            className="max-w-2xl text-4xl font-black uppercase tracking-[-0.08em] text-[#111111] sm:text-5xl lg:text-7xl"
+                            className="max-w-2xl text-center text-[2.6rem] font-black uppercase leading-[0.9] tracking-[-0.08em] text-[#111111] sm:text-5xl md:text-left lg:text-7xl"
                             initial={{ opacity: 0, y: 18 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
@@ -383,7 +401,7 @@ export function PortfolioPage() {
                         </motion.h1>
 
                         <motion.p
-                            className="mt-6 max-w-xl text-lg leading-8 text-[#2f2a26]"
+                            className="mt-6 max-w-xl text-center text-base leading-7 text-[#2f2a26] md:text-left md:text-lg md:leading-8"
                             initial={{ opacity: 0, y: 18 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
@@ -392,31 +410,31 @@ export function PortfolioPage() {
                         </motion.p>
 
                         <motion.div
-                            className="mt-8 flex flex-wrap items-center gap-4"
+                            className="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-start"
                             initial={{ opacity: 0, y: 18 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                         >
-                            <Button size="lg">
+                            <Button size="lg" className="w-full md:w-auto">
                                 Book a call
                                 <ArrowRight className="h-4 w-4" />
                             </Button>
-                            <Button variant="secondary" size="lg" asChild>
+                            <Button variant="secondary" size="lg" asChild className="w-full md:w-auto">
                                 <a href="#work">View projects</a>
                             </Button>
                         </motion.div>
 
                         <motion.div
-                            className="mt-10 flex flex-wrap items-center gap-6 text-sm font-medium text-[#111111]"
+                            className="mt-10 flex flex-col items-center gap-3 text-sm font-medium text-[#111111] md:flex-row md:flex-wrap md:gap-6"
                             initial={{ opacity: 0, y: 18 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.4 }}
                         >
-                            <div className="flex items-center gap-2 border-2 border-black bg-[#f6f3ee] px-3 py-2">
+                            <div className="flex w-full items-center justify-center gap-2 border-2 border-black bg-[#f6f3ee] px-3 py-2 md:w-auto md:justify-start">
                                 <MapPin className="h-4 w-4" />
                                 {portfolioData.location}
                             </div>
-                            <div className="flex items-center gap-2 border-2 border-black bg-[#f6f3ee] px-3 py-2">
+                            <div className="flex w-full items-center justify-center gap-2 border-2 border-black bg-[#f6f3ee] px-3 py-2 md:w-auto md:justify-start">
                                 <Mail className="h-4 w-4" />
                                 {portfolioData.email}
                             </div>
@@ -434,7 +452,7 @@ export function PortfolioPage() {
                     </div>
                 </motion.section>
 
-                <section className="mt-12 grid items-stretch gap-4 md:grid-cols-3">
+                <section className="mt-8 grid items-stretch gap-4 md:mt-12 md:grid-cols-3">
                     {portfolioData.stats.map((stat) => (
                         <motion.div
                             key={stat.label}
@@ -459,7 +477,7 @@ export function PortfolioPage() {
 
                 <motion.section
                     id="about"
-                    className="mt-24"
+                    className="mt-16 md:mt-24"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
@@ -472,18 +490,18 @@ export function PortfolioPage() {
                         description={portfolioData.intro}
                     />
 
-                    <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+                    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.9fr_1.1fr]">
 
                         {/* Personal image */}
                         <div className="space-y-6">
 
                             <motion.div
-                                className="relative overflow-hidden border-2 border-black bg-[#111111] shadow-[10px_10px_0_0_#111111]"
+                                className="relative mx-auto w-full max-w-[420px] overflow-hidden border-2 border-black bg-[#111111] shadow-[8px_8px_0_0_#111111] md:max-w-none md:shadow-[10px_10px_0_0_#111111]"
                                 whileHover={{ y: -5 }}
                                 transition={{ duration: 0.2 }}
                             >
                                 <div
-                                    className="aspect-[4/3] overflow-hidden"
+                                    className="aspect-[4/5] overflow-hidden md:aspect-[4/3]"
                                     style={{
                                         borderRadius: "14% 86% 20% 80% / 78% 14% 86% 22%",
                                     }}
@@ -584,7 +602,7 @@ export function PortfolioPage() {
 
                 <motion.section
                     id="experience"
-                    className="mt-24"
+                    className="mt-16 md:mt-24"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
@@ -623,7 +641,7 @@ export function PortfolioPage() {
 
                 <motion.section
                     id="work"
-                    className="mt-24"
+                    className="mt-16 md:mt-24"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
@@ -719,7 +737,7 @@ export function PortfolioPage() {
 
                 <motion.section
                     id="contact"
-                    className="mt-24"
+                    className="mt-[20px] md:mt-24"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -727,10 +745,10 @@ export function PortfolioPage() {
                 >
                     <Card className="section-shell overflow-hidden border-2 border-black !bg-[#111111] p-0 !text-[#f6f3ee]">
                         <CardContent className="p-8 sm:p-10 lg:p-12">
-                            <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
+                            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
 
                                 {/* Main CTA */}
-                                <div>
+                                <div className="text-center lg:text-left">
                                     <Badge
                                         variant="default"
                                         className="mb-8 border-2 border-[#111111] bg-[#f6f3ee] px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.16em] text-[#111111]"
@@ -738,7 +756,7 @@ export function PortfolioPage() {
                                         Let&apos;s build
                                     </Badge>
 
-                                    <h2 className="max-w-4xl text-5xl font-black uppercase leading-[0.88] tracking-[-0.07em] text-[#f6f3ee] sm:text-6xl md:text-7xl lg:text-[6.5rem]">
+                                    <h2 className="max-w-4xl text-[2.8rem] font-black uppercase leading-[0.9] tracking-[-0.07em] text-[#f6f3ee] sm:text-6xl md:text-7xl lg:text-[6.5rem]">
                                         Build
                                         <br />
                                         <span className="text-[#8d8d8d]">something</span>
@@ -756,11 +774,11 @@ export function PortfolioPage() {
                                 {/* Contact */}
                                 <div className="flex flex-col gap-6 lg:min-w-[310px] lg:items-end">
 
-                                    <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                                    <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row lg:flex-row">
                                         <Button
                                             size="lg"
                                             variant="secondary"
-                                            className="h-14 border-2 border-[#f6f3ee] bg-[#f6f3ee] px-7 text-sm font-black uppercase tracking-wide text-[#111111] shadow-[5px_5px_0_0_#8d8d8d] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_0_#8d8d8d]"
+                                            className="h-14 w-full border-2 border-[#f6f3ee] bg-[#f6f3ee] px-7 text-sm font-black uppercase tracking-wide text-[#111111] shadow-[5px_5px_0_0_#8d8d8d] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_0_#8d8d8d] sm:w-auto"
                                             asChild
                                         >
                                             <a href={`mailto:${portfolioData.email}`}>
@@ -770,7 +788,7 @@ export function PortfolioPage() {
 
                                         <Button
                                             size="lg"
-                                            className="h-14 border-2 border-[#8d8d8d] bg-[#111111] px-7 text-sm font-black uppercase tracking-wide text-[#f6f3ee] shadow-[5px_5px_0_0_#f6f3ee] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_0_#f6f3ee]"
+                                            className="h-14 w-full border-2 border-[#8d8d8d] bg-[#111111] px-7 text-sm font-black uppercase tracking-wide text-[#f6f3ee] shadow-[5px_5px_0_0_#f6f3ee] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_0_#f6f3ee] sm:w-auto"
                                             asChild
                                         >
                                             <a
@@ -781,7 +799,7 @@ export function PortfolioPage() {
                                         </Button>
                                     </div>
 
-                                    <div className="border-t border-[#444444] pt-5 text-sm leading-6 text-[#b8b8b8] lg:w-full lg:text-right">
+                                    <div className="border-t border-[#444444] pt-5 text-center text-sm leading-6 text-[#b8b8b8] lg:w-full lg:text-right">
                                         <p className="font-medium text-[#f6f3ee]">
                                             {portfolioData.email}
                                         </p>
@@ -799,7 +817,7 @@ export function PortfolioPage() {
             <footer className="border-t-2 border-black bg-[#f6f3ee]">
                 <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-5 py-8 text-sm font-black uppercase tracking-[0.12em] text-[#111111] sm:flex-row sm:px-6 lg:px-8">
                     <p>
-                        © {new Date().getFullYear()} {portfolioData.name}. Built with care.
+                        © {new Date().getFullYear()} {portfolioData.name}. Turning ideas into experiences that matter.
                     </p>
 
                     <div className="flex items-center gap-4">
