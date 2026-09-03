@@ -8,6 +8,7 @@ import {
     Briefcase,
     BriefcaseBusiness,
     Cloud,
+    Download,
     ExternalLink,
     FolderKanban,
     GitBranch,
@@ -143,6 +144,18 @@ export function PortfolioPage() {
                         </a>
                     </Button>
 
+                    {/* Desktop CTA */}
+                    <Button
+                        asChild
+                        size="sm"
+                        className="hidden md:inline-flex"
+                    >
+                        <a href="/resume" download>
+                            <Download className="h-4 w-4" />
+                            Download Resume
+                        </a>
+                    </Button>
+
                     {/* Mobile menu button */}
                     <button
                         type="button"
@@ -222,6 +235,17 @@ export function PortfolioPage() {
                             <a href="#contact">
                                 Let&apos;s talk
                                 <ArrowRight className="h-4 w-4" />
+                            </a>
+                        </Button>
+                        <Button
+                            asChild
+                            size="lg"
+                            className="mt-4 w-full"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            <a href="/resume" download>
+                                <Download className="h-4 w-4" />
+                                Download Resume
                             </a>
                         </Button>
                     </nav>
