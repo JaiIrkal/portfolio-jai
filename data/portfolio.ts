@@ -39,8 +39,8 @@ export const portfolioData = {
 
   stats: [
     {
-      value: "1+",
-      label: "Years professional experience",
+      value: "2+",
+      label: "Years of professional experience",
       icon: "experience",
     },
     {
